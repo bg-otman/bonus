@@ -1,4 +1,4 @@
-SRCS =  ft_strlen.c ft_putbefore.c is_valid_specifier.c ft_skip_spaces.c ft_get_arglen.c ft_atoi.c ft_nbr_len.c ft_count_chars.c ft_putspace_after.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_printf.c ft_puthex.c ft_putunsint.c ft_putadresse.c
+SRCS = ft_putchar.c ft_skip_chars.c ft_nbr_len.c ft_valid_specifier.c ft_putspace_after.c ft_putstr.c ft_atoi.c ft_putnbr.c ft_printf.c ft_puthex.c ft_putunsint.c ft_putadresse.c
 OBJECTS = $(SRCS:.c=.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror

@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: obouizi <obouizi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: obouizi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 13:55:05 by obouizi           #+#    #+#             */
-/*   Updated: 2024/11/26 17:52:40 by obouizi          ###   ########.fr       */
+/*   Updated: 2024/08/03 21:00:06 by obouizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libftprintf.h"
 
 long	ft_atoi(const char *str)
 {
@@ -26,7 +28,7 @@ long	ft_atoi(const char *str)
 		nb = nb * 10 + (str[i] - 48);
 		i++;
 	}
-	if (nb >= 2147483648)
+	if (nb > 2147483647)
 		return (-1);
 	return (nb);
 }

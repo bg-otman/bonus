@@ -22,6 +22,11 @@ int handle_flags(const char **str, va_list args)
 		ft_skip_chars(str, '-');
 		len = ft_putspace_after(str, args);
 	}
+	else
+	{
+		len += ft_putchar('%');// here
+		len += ft_putchar(**str);// here handle % and just spaces
+	}
 
 	return (len);
 }
@@ -54,37 +59,42 @@ static int ft_put_percent(const char **str)
     (*str)++;
     return (1);
 }
+int handle_format(const char **str, va_list args)
+{
+    (*str)++;
+    ft_skip_chars(str, ' ');
+    if (is_valid_specifier(**str))
+        return (check_specifier(**str, args));
+	else
+    	return (handle_flags(str, args));
+}
 
 int ft_printf(const char *str, ...)
 {
-	int printlen;
-	va_list args;
+    int printlen;
 	int	i;
+    va_list args;
 
-	va_start(args, str);
-	printlen = 0;
+    va_start(args, str);
+    printlen = 0;
 	i = 0;
-	while (*str)
-	{
-		if (*str == '%' && *(str + 1) == '%')
+    while (*str)
+    {
+        if (*str == '%' && *(str + 1) == '%')
             printlen += ft_put_percent(&str);
-		else if (*str == '%' && *(str + 1) != '\0')
-		{
-			str++;
-			ft_skip_chars(&str, ' ');
-			if (is_valid_specifier(*str))
-				printlen += check_specifier(*str, args);
-			else
-			{
-				if ((i = handle_flags(&str, args)) == -1)
+        else if (*str == '%' && *(str + 1) != '\0')
+        {
+            if ((i = handle_format(&str, args)) == -1)
 					break ;
-				printlen += i;
-			}
-		}
-		else
+			printlen += i;
+        }
+        else
             printlen += ft_putchar(*str);
-		str++;
-	}
-	va_end(args);
-	return (printlen);
+        str++;
+    }
+
+    va_end(args);
+    return (printlen);
 }
+
+

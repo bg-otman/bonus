@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	int	i;
-	int	nb;
+	int		i;
+	long	nb;
 
 	nb = 0;
 	i = 0;
@@ -26,5 +26,7 @@ int	ft_atoi(const char *str)
 		nb = nb * 10 + (str[i] - 48);
 		i++;
 	}
+	if (nb >= 2147483648)
+		return (-1);
 	return (nb);
 }

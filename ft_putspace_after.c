@@ -1,28 +1,31 @@
 #include "libftprintf.h"
 
+
 int ft_putspace_after(const char **str, va_list args)
 {
     int space_nb;
     int char_len;
-    int i;
     int count;
-    int specifier;
+    int i;
 
     space_nb = ft_atoi(*str);
+    if (space_nb == -1)
+        return (-1);
     char_len = ft_count_chars('-', *str);
-    specifier = ft_nbr_len(space_nb) + char_len;
     i = 0;
-    count = 0;
-    while (i < specifier)
+    while ((*str)[i] && i < ft_nbr_len(space_nb) + char_len)
         i++;
-    if ((*str)[i] != '\0')
-        count = check_specifier((*str)[i], args, str);
-    i = 0;
-    while (i < space_nb - count)
+    if (is_valid_specifier((*str)[i]))
     {
-        ft_putchar(' ');
-        i++;
+        i = 0;
+        count = check_specifier((*str)[i], args, str);
+        while (i < space_nb - count)
+        {
+            ft_putchar(' ');
+            i++;
+        }
+        *str += ft_nbr_len(space_nb) + char_len;
+        return (ft_nbr_len(space_nb) + char_len);
     }
-    *str += specifier;
-    return (count + i);
+    return (ft_putchar('%') + ft_putchar('-'));
 }

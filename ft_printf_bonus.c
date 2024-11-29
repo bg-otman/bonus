@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouizi <obouizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 12:52:20 by obouizi           #+#    #+#             */
-/*   Updated: 2024/11/26 15:47:12 by obouizi          ###   ########.fr       */
+/*   Updated: 2024/11/29 20:42:44 by obouizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,13 @@ int handle_flags(const char **str, va_list args)
 		ft_skip_chars(str, '-');
 		len = ft_putspace_after(str, args);
 	}
-	else if (**str >= '0' && **str <= '9')
+	else if (**str >= '1' && **str <= '9')
 		len = ft_putspace_before(str, args);
+	else if (**str == '0')
+	{
+		ft_skip_chars(str, '0');
+		len = ft_putzero(str, args);
+	}
 
 	return (len);
 }
@@ -88,7 +93,7 @@ int ft_printf(const char *str, ...)
         else if (*str == '%' && *(str + 1) != '\0')
         {
             if ((i = handle_format(&str, args)) == -1)
-					break ;
+					return (-1);
 			printlen += i;
         }
         else

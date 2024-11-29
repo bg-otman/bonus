@@ -30,5 +30,6 @@ int     ft_putspace_after(const char **str, va_list args);
 long	ft_atoi(const char *str);
 int     ft_nbr_len(int nb);
 void    ft_skip_chars(const char **str, char c);
+int     is_valid_flag(char c);
 
 #endif

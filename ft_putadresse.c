@@ -12,7 +12,7 @@
 
 #include "libftprintf.h"
 
-static int ft_getadresse(unsigned long nb, char *hex)
+static int ft_getadresse(unsigned long long nb, char *hex)
 {
     int count;
     
@@ -23,7 +23,7 @@ static int ft_getadresse(unsigned long nb, char *hex)
     return (count);
 }
 
-int     ft_putadresse(unsigned long nb)
+int     ft_putadresse(unsigned long long nb)
 {
     int count;
     

@@ -22,6 +22,8 @@ int handle_flags(const char **str, va_list args)
 		ft_skip_chars(str, '-');
 		len = ft_putspace_after(str, args);
 	}
+	else if (**str >= '0' && **str <= '9')
+		len = ft_putspace_before(str, args);
 
 	return (len);
 }
@@ -45,7 +47,7 @@ int	check_specifier(char c, va_list args)
 	else if (c == 'u')
 		len = ft_putunsint((va_arg(args, unsigned int)));
 	else if (c == 'p')
-		len = ft_putadresse((va_arg(args, unsigned long)));
+		len = ft_putadresse((va_arg(args, unsigned long long)));
 	return (len);
 }
 static int ft_put_percent(const char **str)

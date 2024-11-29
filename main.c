@@ -5,9 +5,9 @@
 int main()
 {
     
-	int n1 = ft_printf("|copy : %        --5s|", "hi");
+	int n1 = ft_printf("|copy : %5p|", 1);
 	printf("\n");
-	   int n2 = printf("|orig : %        --5s|", "hi");
+	   int n2 = printf("|orig : %5p|", 1);
 	printf("\n");
 	printf("orig : %d | copy : %d\n", n2, n1);
     return 0;

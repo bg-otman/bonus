@@ -23,7 +23,7 @@ int	    ft_putchar(char c);
 int	    ft_putnbr(int n);
 int	    ft_putstr(char *s);
 int     ft_puthex(unsigned int nb, char *hex);
-int     ft_putadresse(unsigned long nb);
+int     ft_putadresse(unsigned long long nb);
 int     ft_putunsint(unsigned int nb);
 int     is_valid_specifier(char c);
 int     ft_putspace_after(const char **str, va_list args);
@@ -31,5 +31,8 @@ long	ft_atoi(const char *str);
 int     ft_nbr_len(int nb);
 void    ft_skip_chars(const char **str, char c);
 int     is_valid_flag(char c);
+int     get_arg_len(char specifier, va_list args);
+int     ft_putspace_before(const char **str, va_list args);
+size_t	ft_strlen(const char *s);
 
 #endif

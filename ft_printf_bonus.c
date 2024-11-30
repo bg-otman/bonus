@@ -6,33 +6,11 @@
 /*   By: obouizi <obouizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 12:52:20 by obouizi           #+#    #+#             */
-/*   Updated: 2024/11/29 20:42:44 by obouizi          ###   ########.fr       */
+/*   Updated: 2024/11/29 22:04:25 by obouizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-
-int handle_flags(const char **str, va_list args)
-{
-	int len;
-
-	len = 0;
-	if (**str == '-')
-	{
-		ft_skip_chars(str, '-');
-		len = ft_putspace_after(str, args);
-	}
-	else if (**str >= '1' && **str <= '9')
-		len = ft_putspace_before(str, args);
-	else if (**str == '0')
-	{
-		ft_skip_chars(str, '0');
-		len = ft_putzero(str, args);
-	}
-
-	return (len);
-}
-
 
 int	check_specifier(char c, va_list args)
 {
@@ -61,21 +39,6 @@ static int ft_put_percent(const char **str)
     (*str)++;
     return (1);
 }
-int handle_format(const char **str, va_list args)
-{
-    (*str)++;
-    ft_skip_chars(str, ' ');
-    if (is_valid_specifier(**str))
-        return (check_specifier(**str, args));
-	else if (is_valid_flag(**str))
-    	return (handle_flags(str, args));
-	else
-    {
-        if (**str != '\0') 
-            return (ft_putchar('%') + ft_putchar(**str));
-        return (ft_putchar('%'));
-    }
-}
 
 int ft_printf(const char *str, ...)
 {
@@ -100,7 +63,6 @@ int ft_printf(const char *str, ...)
             printlen += ft_putchar(*str);
         str++;
     }
-
     va_end(args);
     return (printlen);
 }

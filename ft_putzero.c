@@ -62,6 +62,7 @@ int ft_putzero(const char **str, va_list args)
     int len;
     int is_negative;
 
+    ft_skip_chars(str, '0');
     space_nb = ft_atoi(*str);
     if (space_nb == -1)
         return (-1);

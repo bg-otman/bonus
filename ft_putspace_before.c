@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putspace_before.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: obouizi <obouizi@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/01 14:18:01 by obouizi           #+#    #+#             */
+/*   Updated: 2024/12/01 14:21:07 by obouizi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libftprintf_bonus.h"
 
 static int get_len(char specifier, va_list args)
 {

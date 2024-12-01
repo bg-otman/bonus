@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   libftprintf_bonus.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouizi <obouizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:14:01 by obouizi           #+#    #+#             */
-/*   Updated: 2024/11/30 18:05:44 by obouizi          ###   ########.fr       */
+/*   Updated: 2024/12/01 14:22:41 by obouizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef LIBFTPRINTF_BONUS_H
+# define LIBFTPRINTF_BONUS_H
 
 # include <unistd.h>
 # include <stdarg.h>
@@ -41,5 +41,6 @@ int     ft_hex_len(unsigned long n);
 int     ft_handle_space(const char **str, va_list args);
 int     handle_dot(const char **str, va_list args);
 int     ft_unsigned_nbr_len(unsigned int nb);
+int     handle_dash(const char **str, va_list args);
 
 #endif

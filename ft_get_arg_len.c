@@ -1,17 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_get_arg_len.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: obouizi <obouizi@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/01 14:16:38 by obouizi           #+#    #+#             */
+/*   Updated: 2024/12/01 14:19:38 by obouizi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "libftprintf.h"
 
-// int get_arg_len(char specifier, va_list args)
-// {
-//     if (specifier == 's')
-//         return (ft_strlen(va_arg(args, char *)));
-//     else if (specifier == 'd' || specifier == 'i')
-//         return (ft_nbr_len(va_arg(args, int)));
-
-//     return (-1);
-// }
-
-//////////////////////
+#include "libftprintf_bonus.h"
 
 int get_arg_len(char specifier, va_list args)
 {

@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_handle_flags.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: obouizi <obouizi@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/01 14:16:56 by obouizi           #+#    #+#             */
+/*   Updated: 2024/12/01 14:20:08 by obouizi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libftprintf_bonus.h"
 
 int check_signs(const char **str)
 {
@@ -42,5 +53,7 @@ int handle_flags(const char **str, va_list args)
 	}
 	else if (**str == '.')
 		len = handle_dot(str, args);
+	else if (**str == '#')
+		len = handle_dash(str, args);
 	return (len);
 }

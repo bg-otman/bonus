@@ -1,6 +1,18 @@
-#include "libftprintf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_dot.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: obouizi <obouizi@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/01 14:18:56 by obouizi           #+#    #+#             */
+/*   Updated: 2024/12/01 14:22:12 by obouizi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int decimal_precision(const char **str, va_list args, int width)
+#include "libftprintf_bonus.h"
+
+static int decimal_precision(const char **str, va_list args, int width)
 {
     int num;
     int len;
@@ -25,7 +37,7 @@ int decimal_precision(const char **str, va_list args, int width)
     return (len);
 }
 
-int unsigned_precision(const char **str, va_list args, int width)
+static int unsigned_precision(const char **str, va_list args, int width)
 {
     unsigned int num;
     int len;
@@ -45,7 +57,7 @@ int unsigned_precision(const char **str, va_list args, int width)
     return (len);
 }
 
-int string_precision(const char **str, va_list args, int width)
+static int string_precision(const char **str, va_list args, int width)
 {
     char *buffer;
     int len;
@@ -68,7 +80,7 @@ int string_precision(const char **str, va_list args, int width)
     return (width);
 }
 
-int hex_precision(const char **str, va_list args, int width, char *hex)
+static int hex_precision(const char **str, va_list args, int width, char *hex)
 {
     unsigned int nb;
     int len;

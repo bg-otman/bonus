@@ -6,11 +6,11 @@
 /*   By: obouizi <obouizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 17:42:43 by obouizi           #+#    #+#             */
-/*   Updated: 2024/11/26 15:47:40 by obouizi          ###   ########.fr       */
+/*   Updated: 2024/12/01 14:20:54 by obouizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libftprintf_bonus.h"
 
 int ft_puthex(unsigned int nb, char *hex)
 {

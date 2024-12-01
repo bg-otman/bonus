@@ -6,11 +6,11 @@
 /*   By: obouizi <obouizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:52:48 by obouizi           #+#    #+#             */
-/*   Updated: 2024/11/26 15:48:04 by obouizi          ###   ########.fr       */
+/*   Updated: 2024/12/01 14:21:11 by obouizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libftprintf_bonus.h"
 
 int	ft_putstr(char *s)
 {
